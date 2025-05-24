@@ -12,9 +12,6 @@ db.sqlite3-journal
 media/
 staticfiles/
 
-# Dependencies
-requirements.txt
-
 # Virtual Environment
 venv/
 ENV/
