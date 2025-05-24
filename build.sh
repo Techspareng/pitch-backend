@@ -2,8 +2,9 @@
 # exit on error
 set -o errexit
 
-# Debugging: Print current directory
+# Debug: Show current directory
 pwd
+ls -la
 
 # Install dependencies
 pip install --upgrade pip
@@ -12,8 +13,9 @@ pip install -r requirements.txt
 # Navigate to Django project directory
 cd backend
 
-# Debugging: Print current directory after cd
+# Debug: Show Django directory contents
 pwd
+ls -la
 
 # Collect static files
 python manage.py collectstatic --no-input
