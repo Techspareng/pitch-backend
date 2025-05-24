@@ -17,6 +17,10 @@ echo "🔧 Installing dependencies..."
 pip install --upgrade pip
 pip install -r requirements.txt
 
+# Create SQLite database directory if it doesn't exist
+echo "📁 Setting up database directory..."
+mkdir -p backend/db
+
 # Move to Django directory
 echo "📂 Moving to Django project directory..."
 cd backend
