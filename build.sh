@@ -15,5 +15,3 @@ python manage.py collectstatic --no-input
 echo "🔄 Running migrations..."
 python manage.py migrate
 echo "✅ Build completed successfully!"
-# Debugging: Print current directory after migration
-pwd
