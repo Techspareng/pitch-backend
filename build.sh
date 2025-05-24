@@ -1,24 +1,28 @@
 #!/bin/bash
-# Strict error handling
 set -o errexit
 
 # Debug information
 echo "🔍 Current environment:"
 echo "Working directory: $(pwd)"
 echo "Python version: $(python --version)"
-echo "Pip version: $(pip --version)"
+
+# Create SQLite directories
+echo "📁 Creating SQLite directories..."
+mkdir -p backend/db
+mkdir -p /opt/render/project/src/db
+
+# Set permissions
+echo "🔒 Setting database permissions..."
+chmod 777 backend/db
+chmod 777 /opt/render/project/src/db
 
 # Install dependencies
 echo "📦 Installing Python packages..."
 pip install --upgrade pip
 pip install -r requirements.txt
 
-# Prepare database directory
-echo "🗄️ Setting up database..."
-mkdir -p backend/db
-
-# Django commands
-echo "🚀 Configuring Django..."
+# Django setup
+echo "🚀 Setting up Django..."
 cd backend
 python manage.py collectstatic --noinput
 python manage.py migrate --noinput
